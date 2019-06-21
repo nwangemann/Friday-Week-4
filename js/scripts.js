@@ -25,6 +25,7 @@ Order.prototype.toppingsCalc = function() {
   return total
 }
 
+//business logic for storing multiple orders, relies heavily on address book example
 function OrderTracker() {
   this.orders = [],
   this.currentID = 0
@@ -35,18 +36,21 @@ OrderTracker.prototype.addOrder = function(order) {
   this.orders.push(order);
 }
 
-OrderTracker.prototype
+OrderTracker.prototype.assignId = function() {
+  this.currentID += 1;
+  return this.currentID;
+}
 
 
 // User Interface Logic
 
 var toppingsArray = []
+var orderTracker = new OrderTracker();
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
     var orderName = $("#nameInput").val();
-    console.log(orderName);
     var orderSize = $("#size").val();
     var crustType = $("#crust").val();
     $("input:checkbox[name=toppings]:checked").each(function() {
@@ -57,8 +61,8 @@ $(document).ready(function() {
     var orderObject = new Order(orderName, orderSize, crustType, toppingsArray);
     orderObject.toppings = orderObject.toppingsCalc();
     orderObject.priceCalc();
-    console.log(orderObject);
-    $("#outputName").text(orderObject.name + "'s order:");
-    $("#output").text("$" + orderObject.cost + ".00");
+    orderTracker.addOrder(orderObject)
+    console.log(orderTracker);
+    $("#output").append(orderObject.name + "'s order: " + " $" + orderObject.cost + ".00" + "<br>");
   });
 });
