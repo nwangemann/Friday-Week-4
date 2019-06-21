@@ -1,8 +1,69 @@
 h1 {
   text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+body {
+  background-color: #470C15;
+}
+
+
+.panel-default {
+  border-radius: 25px;
+  border: groove white 3px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  margin-left: 10px;
+}
+
+#jumbotron1 {
+  background-image: url(../img/pizza.jpg);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 190px;
+  border-radius: 25px;
+  border: groove white 3px;
+  margin: 15px;
+}
+
+#jumbotron2 {
+  background-color: black;
+  color: white;
+  height: 190px;
+  border-radius: 25px;
+  margin: 15px;
+  border: groove white 3px;
 }
 
 #output {
   font-size: 35px;
   text-align: center;
+}
+
+#contain1 {
+  border-radius: 25px;
+  border: 5px white;
+}
+
+#nameInput {
+  border-radius: 15px;
+  text-indent: 8px;
+}
+
+#panel2 {
+  height: 300px;
+  font-family: 'Dancing Script', cursive;
 }
