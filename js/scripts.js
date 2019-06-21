@@ -45,6 +45,7 @@ $(document).ready(function() {
     orderObject.toppings = orderObject.toppingsCalc();
     orderObject.priceCalc();
     console.log(orderObject);
+    $("#outputName").text(orderObject.name + "'s order:");
     $("#output").text("$" + orderObject.cost + ".00");
   });
 });
