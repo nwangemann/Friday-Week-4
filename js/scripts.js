@@ -11,24 +11,36 @@ function Order(name, size, crust, toppings, cost) {
 
 //prototype to take values stored from order properties and return total price value
 Order.prototype.priceCalc = function() {
-  return this.cost = parseInt(this.size) + parseInt(this.crust) + parseInt(this.toppings)
+  this.cost = parseInt(this.size) + parseInt(this.crust) + parseInt(this.toppings)
+  this.toppings = []
+  return
 }
 
-
-
-
+Order.prototype.toppingsCalc = function() {
+  var total = 0
+  for (var i = 0; i < toppingsArray.length; i++) {
+    total = total + parseInt(toppingsArray[i])
+  }
+}
 
 // User Interface Logic
+
+var toppingsArray = []
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
-    var userName = $("#nameInput").val();
-    console.log(userName);
-    var testOrder = new Order("TestPerson", "2", "3", "8", "0")
-    console.log(testOrder);
-    var testComplete = testOrder.priceCalc();
-    console.log(testComplete);
-      console.log(testOrder);
+    var orderName = $("#nameInput").val();
+    console.log(orderName);
+    var orderSize = $("#size").val();
+    var crustType = $("#crust").val();
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      if (this.checked) {
+        toppingsArray.push(this.value);
+      }
+    });
+    var orderObject = new Order(orderName, orderSize, crustType, toppingsArray);
+    // orderObject.priceCalc();
+    console.log(orderObject);
   });
 });
