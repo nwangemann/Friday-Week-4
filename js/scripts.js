@@ -16,11 +16,13 @@ Order.prototype.priceCalc = function() {
   return
 }
 
+// prototype to loop through values stored from toppings selections and return the total value
 Order.prototype.toppingsCalc = function() {
   var total = 0
   for (var i = 0; i < toppingsArray.length; i++) {
     total = total + parseInt(toppingsArray[i])
   }
+  return total
 }
 
 // User Interface Logic
@@ -40,7 +42,9 @@ $(document).ready(function() {
       }
     });
     var orderObject = new Order(orderName, orderSize, crustType, toppingsArray);
-    // orderObject.priceCalc();
+    orderObject.toppings = orderObject.toppingsCalc();
+    orderObject.priceCalc();
     console.log(orderObject);
+    $("#output").text("Your Order Total Is: " + "$" + orderObject.cost + ".00");
   });
 });
