@@ -10,6 +10,15 @@ _This is a website with an order form for placing pizza orders from our restaura
 
 ## Specs
 
+| Behavior | Input | Output |
+| ------------- |:-------------:| -----:|
+| A name can be added to the order | Kevin | Name: Kevin |
+| Size can be selected and added to the pizza order | Large | Size: Large |
+| Toppings can be selected and added to the pizza order | Pepperoni | Toppings: Pepperoni |
+| Crust type can be selected and added to the pizza order | Gluten Free | Crust: Gluten Free |
+| Multiple toppings can be selected and added to the pizza order | Extra cheese, Pepperoni, Onions, Red Peppers, Olives | Toppings: Extra cheese, Pepperoni, Onions, Red Peppers, Olives |
+| The final cost is displayed by the website | Size: Large, Toppings: Cheese | Final Cost: $14.00 |
+
 ## Setup/Installation Requirements
 
 * _Clone repository from github_
