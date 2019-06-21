@@ -65,7 +65,7 @@ body {
 }
 
 #nameInput {
-  border-radius: 15px;
+  border-radius: 20px;
   text-indent: 8px;
 }
 
@@ -98,4 +98,12 @@ body {
   font-weight: bold;
   font-size: 30px;
   cursor: pointer;
+}
+
+#size {
+  margin-left: 15px;
+}
+
+#crust {
+  margin-left: 15px;
 }
