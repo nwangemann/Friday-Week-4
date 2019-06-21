@@ -25,6 +25,19 @@ Order.prototype.toppingsCalc = function() {
   return total
 }
 
+function OrderTracker() {
+  this.orders = [],
+  this.currentID = 0
+}
+
+OrderTracker.prototype.addOrder = function(order) {
+  order.id = this.assignId();
+  this.orders.push(order);
+}
+
+OrderTracker.prototype
+
+
 // User Interface Logic
 
 var toppingsArray = []
