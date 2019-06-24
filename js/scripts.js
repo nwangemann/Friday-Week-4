@@ -50,6 +50,7 @@ var orderTracker = new OrderTracker();
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
+    toppingsArray = [];
     var orderName = $("#nameInput").val();
     var orderSize = $("#size").val();
     var crustType = $("#crust").val();
